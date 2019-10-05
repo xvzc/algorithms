@@ -1,0 +1,9 @@
+main(a,m,n,i){
+	for(i=1,m=0;~scanf("%d",&a);i++){
+		if(a>m){
+			n=i;
+			m=a;
+		}
+	}
+	printf("%d\n%d",m,n);
+}
