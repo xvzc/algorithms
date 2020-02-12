@@ -1,4 +1,4 @@
-# Array Manipuation
+# Solution
 
 ```cpp
 #include <bits/stdc++.h>
