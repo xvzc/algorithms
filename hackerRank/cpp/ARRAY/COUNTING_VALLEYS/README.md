@@ -94,3 +94,6 @@ vector<string> split_string(string input_string) {
 }
 
 ```
+
+![counting-valleys-English-1](https://user-images.githubusercontent.com/45588457/74312739-9015f980-4db5-11ea-9f1e-0e67988aab23.jpg)
+
