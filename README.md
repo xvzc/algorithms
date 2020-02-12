@@ -1,5 +1,5 @@
-# algorithms
-A archive for some sources of algorithm quizzes or study that i have solved
+# About
+An archive for some sources of algorithm quizzes or study that i have solved
 
 ## Links
 [Baek Joon](https://www.acmicpc.net/user/jry9913)  
