@@ -1,5 +1,5 @@
 # algorithms
-A repository as an archive for pushing sources of some algorithm quizzes or study that i have solved
+A archive for some sources of algorithm quizzes or study that i have solved
 
 ## Links
 [Baek Joon](https://www.acmicpc.net/user/jry9913)  
