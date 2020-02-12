@@ -1,2 +1,5 @@
 # algorithms
-A repository as an archive for pushing sources of some algorithm qiuzes that i have solved
+A repository as an archive for pushing sources of some algorithm quizzes that i have solved
+
+Baek Joon : https://www.acmicpc.net/user/jry9913
+Hacker Rank : https://www.hackerrank.com/TRUE_NERD
