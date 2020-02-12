@@ -1,3 +1,5 @@
+#Array Manipuation
+
 ```cpp
 #include <bits/stdc++.h>
 
