@@ -1,8 +1,9 @@
 #include <iostream>
+
 using namespace std;
 
 int n,i;
-long long *dp[10001] = {0, 1, 1, };
+long long dp[10001] = {0, 1, 1, };
 
 int main(int argc, char *argv[])
 {
