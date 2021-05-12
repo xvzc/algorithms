@@ -1,12 +1,25 @@
 #include <iostream>
-#include <typeinfo>
+#include <vector>
+#include <algorithm>
 
-int main()
-{
-    if (__cplusplus == 201703L) std::cout << "C++17\n";
-    else if (__cplusplus == 201402L) std::cout << "C++14\n";
-    else if (__cplusplus == 201103L) std::cout << "C++11\n";
-    else if (__cplusplus == 199711L) std::cout << "C++98\n";
-    else std::cout << "pre-standard C++\n";
+#define endl "\n"
+using namespace std;
 
+int main(int argc, char const *argv[]){
+
+// #define SUBMIT
+#ifndef SUBMIT
+    freopen("input.txt", "r", stdin);
+#endif
+
+    cin.tie(NULL);
+    ios_base::sync_with_stdio(false);
+
+     /* code */
+
+
+#ifndef SUBMIT
+/* DEBUG */
+#endif
+    return 0;
 }
