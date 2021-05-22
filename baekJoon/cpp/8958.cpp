@@ -8,31 +8,25 @@
 using namespace std;
 
 /* GLOBAL VARIABLES */
-ll i, j, k, l;
-ll T, N;
-double sum;
-double scores[1000];
+int i, j, k;
+ll N, sum, cnt;
+string s;
 
 
 void solve(){
-
-    cin >> N;
+    cin >> s;
     sum = 0;
-    for(i = 0; i < N; ++i){
-        cin >> scores[i];
-        sum += scores[i];
-    }
-
-    int avg = sum/N;
-    int cnt = 0;
-    for(i = 0; i < N; ++i){
-        if(scores[i] > avg){
+    cnt = 0;
+    for(i = 0; i < s.length(); i++){
+        if(s[i]=='O')
             cnt++;
+        else{
+            cnt=0;
         }
+        sum+=cnt;
     }
-    cout << fixed;
-    cout.precision(3);
-    cout << (double)100*cnt/N << "%" << endl;
+    /* CODE */
+    cout << sum << endl;
 
     #ifndef SUBMIT
     /* DEBUG */
@@ -44,8 +38,8 @@ int main(int argc, char const *argv[]){
 #ifndef SUBMIT
     freopen("input.txt", "r", stdin);
 #endif
-    cin >> T;
-    for(int f = 0; f < T; f++){
+    cin >> N;
+    for(int n = 0; n < N; n++){
         solve();
     }
     return 0;

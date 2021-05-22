@@ -10,16 +10,15 @@ using namespace std;
 /* GLOBAL VARIABLES */
 
 void solve(){
-    ull mask = 0x80000000000000;
-    cout << bitset<56>(mask);
+
     /* CODE */
 
-    #ifndef SUBMIT
+#ifndef SUBMIT
     /* DEBUG */
-    #endif
+#endif
 }
 
-int main(){
+int main(int argc, char const *argv[]){
     ios_base::sync_with_stdio(false); cin.tie(NULL);
 #ifndef SUBMIT
     freopen("input.txt", "r", stdin);
