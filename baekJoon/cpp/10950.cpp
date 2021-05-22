@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-// #define SUBMIT
+#define SUBMIT
 #define endl '\n'
 #define ll long long
 #define ull unsigned long long
@@ -8,10 +8,18 @@
 using namespace std;
 
 /* GLOBAL VARIABLES */
+int x, y;
+
 
 void solve(){
-    ull mask = 0x80000000000000;
-    cout << bitset<56>(mask);
+    while(1){
+        cin >> x >> y;
+        if(x ==0 && y == 0)
+            break;
+        cout << x+y <<endl;
+
+    }
+
     /* CODE */
 
     #ifndef SUBMIT
@@ -19,7 +27,7 @@ void solve(){
     #endif
 }
 
-int main(){
+int main(int argc, char const *argv[]){
     ios_base::sync_with_stdio(false); cin.tie(NULL);
 #ifndef SUBMIT
     freopen("input.txt", "r", stdin);

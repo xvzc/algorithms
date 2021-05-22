@@ -1,43 +1,38 @@
-// #define SUBMIT
 #include <bits/stdc++.h>
 
 #define endl '\n'
 #define ll long long
-#define MAX 100
-
-int Q; // Test case
-int M; // remainder
-int N;
-
-ll dp[MAX] = {0, 1, 1};
-ll dp_mod[MAX] = {0, 1, 1};
+#define ull unsigned long long
 
 using namespace std;
 
-int main(int argc, char const *argv[]){
+ll Q; // Test case
+ll M; // remainder
+ull N;
 
-#ifndef SUBMIT
-    freopen("input.txt", "r", stdin);
-#endif
+vector<ll> dp_mod = {0, 1, 1};
+string dp_str = "011";
+
+int main(int argc, char const *argv[]){
 
     ios_base::sync_with_stdio(false); cin.tie(NULL);
 
+    cin >> Q >> M;
 
-    for(int i = 3; i < MAX; ++i){
-        dp[i] = dp[i-1] + dp[i-2];
-        dp_mod[i] = (dp_mod[i-1]%5 + dp_mod[i-2]%5)%5;
+    for(ll i = 3; ; ++i){
+        dp_mod.push_back((dp_mod[i-1]%M + dp_mod[i-2]%M)%M);
+
+        if(dp_mod[i] == 0 && dp_mod[i-1] == 1)
+            break;
+
+        dp_str += to_string(dp_mod[i]);
     }
-     /* code */
 
-#ifndef SUBMIT
-/* DEBUG */
-    for(auto const& value : dp)
-        cout << value << " "; 
-    cout << endl;
-    for(auto const& value : dp_mod)
-        cout << value << " "; 
-    cout << endl;
-    
-#endif
+    for(ll i = 0; i < Q; i++){
+        cin >> N;
+        ll q = N%dp_str.length();
+        cout << dp_str[q] << endl;
+    }
+
     return 0;
 }
