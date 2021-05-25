@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 #include <unordered_map>
 
-#define SUBMIT
+// #define SUBMIT
 #define endl '\n'
 #define ll long long
 #define ull unsigned long long
@@ -26,7 +26,7 @@ int find_croatian(int k) {
 
         if(hmap.find(key) != hmap.end()){
             index = k-j;
-            cout << index << endl;
+            // cout << index << endl;
         }
     }
 
