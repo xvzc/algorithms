@@ -24,7 +24,7 @@ bool is_okay(int x, int y){
             if(x+j < N && y+j < N && visited[x+j][y+j])
                     return false;
 
-            if(x-j >= 0 && y+j < N && visited[x-j][y+j])
+            if(x-j >= 0 && y+j < N && visited[x-j][y=j])
                     return false;
             
             if(x+j < N && y-j >= 0 && visited[x+j][y-j])
