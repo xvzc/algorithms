@@ -45,17 +45,22 @@ bool bin_search(int num, vector<int> &vec){
 ## unordered_map
 > 해당 key가 존재하면 값을 증가, 없으면 삽입하는 간단한 예시.
 ```cpp
-int temp;
-unordered_map<int, int> hmap;
-unordered_map<int, int>::iterator it;
+int main() {
+	int temp;
 
-cin >> temp;
+	unordered_map<int, int> hmap;
+	unordered_map<int, int>::iterator it;
 
-it =  hmap.find(temp); 
+	cin >> temp;
 
-if(it == hmap.end())
-	hmap.insert(make_pair(temp, 1)) 
-else
-	it->second++;
+	it =  hmap.find(temp); 
 
+	if(it == hmap.end())
+		hmap.insert(make_pair(temp, 1)) 
+	else
+		it->second++;
+
+	return 0;
+
+}
 ```
