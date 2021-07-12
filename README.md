@@ -64,3 +64,26 @@ int main() {
 
 }
 ```
+# Python3
+
+## 재귀 함수 depth 제한 다루기
+```python
+import sys
+sys.setrecursionlimit(10**8) # 10^8까지 depth를 늘림
+```
+
+## 문자열이 숫자인지 아닌지 판별
+
+```python
+s1 = '12a3'
+s2 = '1234'
+
+s3 = 'abcd'
+s4 = 'abc3'
+
+print(s1.isdigit()) # False
+print(s2.isdigit()) # True
+
+print(s1.isalpha()) # True
+print(s2.isalpha()) # False
+```
