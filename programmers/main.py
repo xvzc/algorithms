@@ -1,9 +1,9 @@
-def solution(n):
-    ternary = ''
+def solution(s):
+    if len(s) in (4, 6) and s.isdigit():
+        return True
 
-    while n != 0:
-        ternary += str(n % 3)
-        n = n // 3
+    return False
 
-    return int(ternary, 3)
 
+s = "bc34"
+print(solution(s))
