@@ -111,3 +111,23 @@ def solution(arr1, arr2):
 
     return (A+B).tolist() # 문제 제출 시 반드시 tolist()를 사용해 list로 변환하여 return 한다.
 ```
+
+
+## heapq
+```python
+import heapq
+
+data = [1, 3, 2, 4, 5]
+heapq.heapify(data)
+heapq.heappush(data, 7)
+heapq.heappush(data, 2)
+heapq.heappush(data, 2)
+heapq.heappush(data, 2)
+
+while True:
+    try:
+        print(heapq.heappop(data),' ', end='')
+        # 1  2  2  2  2  3  4  5  7
+    except IndexError:
+        break
+```
