@@ -98,3 +98,16 @@ def solution(n):
             num-=set(range(2*i,n+1,i)) # 에라토스테에스의 체 알고리즘에서 걸러져야할 부분을 range set을 이용해 제거한다.
     return len(num)
 ```
+
+## numpy 행렬 연산
+```python
+import numpy as np
+
+def solution(arr1, arr2):
+    answer = []
+
+    A = np.array(arr1)
+    B = np.array(arr2)
+
+    return (A+B).tolist() # 문제 제출 시 반드시 tolist()를 사용해 list로 변환하여 return 한다.
+```
