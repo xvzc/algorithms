@@ -87,3 +87,14 @@ print(s2.isdigit()) # True
 print(s1.isalpha()) # True
 print(s2.isalpha()) # False
 ```
+
+## 에라토테네스의 체 set으로 구현
+```python
+def solution(n):
+    num=set(range(2,n+1)) # 2 부터 n+1 범위의 set 생성
+
+    for i in range(2,n+1):
+        if i in num:
+            num-=set(range(2*i,n+1,i)) # 에라토스테에스의 체 알고리즘에서 걸러져야할 부분을 range set을 이용해 제거한다.
+    return len(num)
+```
