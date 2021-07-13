@@ -1,9 +1,4 @@
-def solution(s):
-    if len(s) in (4, 6) and s.isdigit():
-        return True
-
-    return False
+array = [1, 3, 4, 2, 5]
 
 
-s = "bc34"
-print(solution(s))
+print(sorted(array))
