@@ -1,0 +1,1 @@
+main(a){scanf("%d",&a);printf("%d",(a%=8)?a<5?a:10-a:2);}
