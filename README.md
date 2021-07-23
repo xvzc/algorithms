@@ -42,7 +42,7 @@ bool bin_search(int num, vector<int> &vec){
 }
 ```
 
-## unordered_map
+## Unordered map
 > 해당 key가 존재하면 값을 증가, 없으면 삽입하는 간단한 예시.
 ```cpp
 int main() {
@@ -64,6 +64,45 @@ int main() {
 
 }
 ```
+
+## stringstream을 이용해서 공백 단위로 자르기
+```cpp
+stringstream ss(str);
+
+while (ss >> tmp) 
+    cout << tmp << ' ';
+```
+
+## Set을 이용한 합집합 연산
+```cpp
+set<int> set1;
+set<int> set2;
+
+set1.insert(1);
+set1.insert(3);
+set1.insert(2);
+set1.insert(1);
+set1.insert(7);
+set1.insert(1);
+
+set2.insert(2);
+set2.insert(7);
+set2.insert(2);
+set2.insert(9);
+set2.insert(4);
+set2.insert(1);
+
+set<int> set_buff;
+set_union(set1.begin(), set1.end(), set2.begin(), set2.end(), inserter(set_buff, set_buff.begin()));
+
+for(auto it : set_buff) {
+    cout << it << " ";
+}
+cout << endl;
+```
+
+
+
 # Python3
 
 ## 재귀 함수 depth 제한 다루기
