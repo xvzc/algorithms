@@ -42,6 +42,25 @@ bool bin_search(int num, vector<int> &vec){
 }
 ```
 
+## set 사용 하여 두 집합 더하기
+
+```
+set<string> a;
+set<string> b;
+set<string> buff;
+
+a.insert("abc");
+a.insert("def");
+b.insert("abc");
+b.insert("123");
+
+set_union(s.begin(), s.end(), b.begin(), b.end(), inserter(buff, buff.begin()));
+
+for(set<string>::iterator it = buff.begin(); it != buff.end(); it++) {
+   cout << *it << endl;
+}
+```
+
 ## Unordered map
 > 해당 key가 존재하면 값을 증가, 없으면 삽입하는 간단한 예시.
 ```cpp
