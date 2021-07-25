@@ -2,7 +2,7 @@
 PS study.
 
 ## Links
-[CPP Study](https://github.com/jerry901/algorithms/tree/main/cpp)
+[CPP Study](https://github.com/jerry901/algorithms/tree/main/cpp)  
 [Baek Joon](https://www.acmicpc.net/user/jry9913)  
 
 # CPP
