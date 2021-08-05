@@ -2,8 +2,11 @@
 
 using namespace std;
 
+void init(vector<int> &parent) {
+    for(int i=1; i <= parent.size(); ++i) {
+    }
+}
+
 int main() {
-    vector<int> v = {1, 2, 3, 4};
-    for(auto i : v)
-        cout << i << endl;
+
 }
