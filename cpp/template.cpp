@@ -22,12 +22,12 @@ using namespace std;
 /*******************/
 
 /**** FUNCTIONS ****/
-void solution(){
+void solution() {
 }
 /*******************/
 
-// #define SUBMIT
-int main(){
+//#define SUBMIT
+int main() {
 	io_faster;
 	#ifndef SUBMIT
 	from_test_case;
