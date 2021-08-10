@@ -1,38 +1,44 @@
 #include <bits/stdc++.h>
 
 #define endl '\n'
-#define ll long long
-#define ull unsigned long long
 #define io_faster ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0)
 #define from_test_case freopen("input.txt", "r", stdin)
 
+#define X first
+#define Y second
+
+typedef long long ll;
+typedef unsigned long long ull;
+
 using namespace std;
-/**** VARIABLES ****/
-int a, b;
-/*******************/
 
-/**** FUNCTIONS ****/
-void solve(){
-	
-}
-int gcd(int x, int y){
-	return y ? gcd(y, x%y) : x;
-}
-/*******************/
-
-#define SUBMIT
-int main(){
+//#define SUBMIT
+int main() {
 	io_faster;
 	#ifndef SUBMIT
 	from_test_case;
 	#endif
-	
-	cin >> a >> b;
-	int gcd_result = gcd(a, b);
-	cout << gcd_result << endl;
-	cout << a*b/gcd_result << endl;
 
+    int n, k, temp;
+    vector<int> vec;
+    cin >> n >> k;
 
-	solve();
+    for(int i=0; i < n; ++i) {
+        cin >> temp;
+        vec.push_back(temp);
+    }
+
+    int cnt = 0;
+    int q;
+    for(int i = vec.size()-1; i >= 0; --i) {
+        q = k/vec[i];
+        if(q > 0) {
+            cnt += q;
+            k = k % vec[i];
+        }
+    }
+
+    cout << cnt;
+
 	return 0;
 }

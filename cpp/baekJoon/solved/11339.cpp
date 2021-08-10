@@ -18,15 +18,26 @@ typedef unsigned long long ull;
 using namespace std;
 
 /***********  GLOBALS  ***********/
-
+int N;
 /*********************************/
 
 /*********** FUNCTIONS ***********/
-void solution() {
+bool cmp(pii a, pii b) {
+    return a.Y < b.Y;
+}
+int solution(vector<pii> &vec) {
+    sort(vec.begin(), vec.end(), cmp);
+
+    int sum = 0;
+    int w = N;
+    for(auto p : vec)
+        sum += p.Y*(w--);
+
+    return sum;
 }
 /*********************************/
 
-//#define SUBMIT
+#define SUBMIT
 int main() {
 	io_faster;
 
@@ -34,7 +45,15 @@ int main() {
 	from_test_case;
 	#endif
 
-	solution();
+    cin >> N;
+    vector<pii> vec(N);
+
+    for(int i=0; i < N; ++i) {
+        vec[i].X = i;
+        cin >> vec[i].Y;
+    }
+
+	cout << solution(vec) << endl;
 
 	return 0;
 }
