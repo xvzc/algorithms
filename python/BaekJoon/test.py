@@ -1,13 +1,4 @@
-import sys
+import numbers
 
-nums = []
-for i in range(3):
-    nums.append(int(input()))
+print(hello)
 
-
-stack = []
-result = []
-for i in range(3):
-    if len(stack) == 0:
-        stack.append(i+1)
-        result.append('+')
