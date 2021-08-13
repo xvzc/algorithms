@@ -37,7 +37,6 @@ int solution(vector<int> &v) {
 int main() {
 	io_faster;
 
-
 	#ifndef SUBMIT
 	from_test_case;
 	#endif
