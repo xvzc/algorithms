@@ -1,4 +1,4 @@
 import numbers
 
-print(hello)
 
+print("hello world")
