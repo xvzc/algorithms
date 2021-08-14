@@ -22,11 +22,10 @@ using namespace std;
 /*********************************/
 
 /*********** FUNCTIONS ***********/
-void solution() {
-}
+
 /*********************************/
 
-//#define SUBMIT
+// #define SUBMIT
 int main() {
 	io_faster;
 
@@ -34,7 +33,14 @@ int main() {
 	from_test_case;
 	#endif
 
-	solution();
+    int n, x, y;
+    cin >> n;
+
+    while(n--) {
+        cin >> x >> y;
+        cout << gcd(x, y) << endl;
+    }
 
 	return 0;
 }
+
