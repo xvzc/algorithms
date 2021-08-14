@@ -32,9 +32,6 @@ int main() {
 	from_test_case;
 	#endif
 
-    // LOCAL VARIABLES *************
-    // *****************************
-
 	solution();
 
 	return 0;
