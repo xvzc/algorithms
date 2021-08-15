@@ -4,39 +4,74 @@
 #define from_test_case (void)!freopen("input.txt", "r", stdin)
 #define endl '\n'
 
-#define vi vector<int>
-#define PB push_back
-
-#define pii pair<int,int>
-#define MP make_pair
-#define X first
-#define Y second
+#define fi first
+#define se second
 
 typedef long long ll;
 typedef unsigned long long ull;
 
 using namespace std;
 
-// GLOBAL VARIABLES ****************
+// global variables ****************
 // *********************************
 
-// FUNCTIONS ***********************
-void solution() {}
+// functions ***********************
+vector<int> find_divisor(int num) {
+    vector<int> ret;
+
+    for(int i = 2; i*i <= num; ++i) {
+        if(num % i == 0) {
+            ret.push_back(i);
+            if(i != num/i) ret.push_back(num/i);
+        }
+    }
+
+    return ret;
+}
+
+vector<int> solution(vector<int> &v) {
+    vector<int> diff;
+    for(int i = 1; i < v.size(); ++i) {
+        diff.push_back(v[i] - v[i-1]);
+    }
+
+    int igcd = diff.front();
+    for(auto i : diff) {
+        igcd = gcd(igcd, i);
+    }
+
+    vector<int> ret = find_divisor(igcd);
+    ret.push_back(igcd);
+    sort(ret.begin(), ret.end());
+
+    return ret;
+}
 // *********************************
 
-//#define SUBMIT
+#define submit
 int main() {
 	io_faster;
 
-	#ifndef SUBMIT
+	#ifndef submit
 	from_test_case;
 	#endif
 
-    // LOCAL VARIABLES *************
-    // *****************************
+    int n;
+    cin >> n;
 
-	solution();
+    vector<int> v(n);
 
-	return 0;
+    for(int i=0; i < n; ++i)
+        cin >> v[i];
+
+    sort(v.begin(), v.end());
+
+    vector<int> ret = solution(v);
+
+    for(auto i : ret)
+        cout << i << ' ';
+
+
+    return 0;
 }
 
