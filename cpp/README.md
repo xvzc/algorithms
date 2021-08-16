@@ -96,3 +96,18 @@ do {
     cout << endl;
 } while (next_permutation(v.begin(), v.end()));
 ```
+
+## 고속 지수 계산
+```
+/* Fast exponent in mod p */
+/* Example of calculating the modulo inverse of 2^10007 */
+int result = 1;
+int a = 2;
+int p = 10007;
+for(int i=1; i <= (p-2); i = i << 1) {
+    if(i & (p-2)) {
+        result = (result % p * a % p) % p;
+    }
+    a = (a % p * a % p) % p;
+}
+```

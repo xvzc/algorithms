@@ -1,6 +1,4 @@
 #include <bits/stdc++.h>
-// #include <iostream>
-// #include <vector>
 
 #define io_faster ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0)
 #define from_test_case (void)!freopen("input.txt", "r", stdin)
@@ -18,29 +16,38 @@ using namespace std;
 // *********************************
 
 // FUNCTIONS ***********************
-void solution(vector<int> b) {
-}
+void solution() {}
 // *********************************
 
-//#define SUBMIT
+#define SUBMIT
 int main() {
 	io_faster;
 
-	#ifndef SUBMIT
-	from_test_case;
-	#endif
-
+#ifndef SUBMIT
+    from_test_case;
+#endif
     int n;
     cin >> n;
 
-    vector<int> v(n);
-    int temp;
-    for(int i=0; i < n; ++i) {
-        cin >> temp;
-        v.push_back(temp);
-    }
+    int two = 0;
+    int five = 0;
 
-	solution();
+    for (int i=1; i <= n; ++i) {
+        int cur = i;
+        while(1) {
+            if(cur%2 == 0) {
+                cur /= 2;
+                two++;
+            } else if(cur%5 == 0) {
+                cur /= 5;
+                five++;
+            } else {
+                break;
+            }
+        }
+    }  
+
+    cout << five << endl;
 
     return 0;
 }
