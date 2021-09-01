@@ -4,3 +4,4 @@
 *.out
 *.class
 test/*
+.ccls
