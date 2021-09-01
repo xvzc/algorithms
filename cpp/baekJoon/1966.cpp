@@ -63,7 +63,6 @@ int main() {
         cout << solution(q, v, query) << endl;
     } 
 
-
     return 0;
 }
 
