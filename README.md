@@ -1,7 +1,7 @@
 # About
 PS study.
 
-## Table of Contents
+# Table of Contents
 
 - [탐색](https://github.com/jerry901/algorithms#탐색)
 - [수학](https://github.com/jerry901/algorithms#수학)
@@ -40,9 +40,7 @@ PS study.
 [Source code](https://github.com/jerry901/algorithms/blob/main/study/math/next_permutation.cpp)  
 > next_permutation()을 활용하여 벡터의 모든 순열을 구할 수 있음.
 
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
 
 ### 자료구조
 
