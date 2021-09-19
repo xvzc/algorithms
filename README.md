@@ -3,8 +3,8 @@ PS study.
 
 ## Table of Contents
 
-[탐색](https://github.com/jerry901/algorithms#탐색)
-[수학](https://github.com/jerry901/algorithms#수학)
+- [탐색](https://github.com/jerry901/algorithms#탐색)
+- [수학](https://github.com/jerry901/algorithms#수학)
 
 ### 탐색
 
