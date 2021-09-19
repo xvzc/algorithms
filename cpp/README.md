@@ -98,7 +98,7 @@ do {
 ```
 
 ## 고속 지수 계산
-```
+```cpp
 /* Fast exponent in mod p */
 /* Example of calculating the modulo inverse of 2^10007 */
 int result = 1;
