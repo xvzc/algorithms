@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-#define io_faster ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0)
+#define improve_io ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0)
 #define from_test_case (void)!freopen("input.txt", "r", stdin)
 #define endl '\n'
 
@@ -12,23 +12,22 @@ typedef unsigned long long ull;
 
 using namespace std;
 
-// GLOBAL VARIABLES ****************
-// *********************************
+/* - GLOBAL VARIABLES ---------------------------- */
 
-// FUNCTIONS ***********************
-void solution() {}
-// *********************************
+/* ----------------------------------------------- */
 
-// #define SUBMIT
+/* - FUNCTIONS ----------------------------------- */
+
+/* ----------------------------------------------- */
+
+#define SUBMIT
 int main() {
-    io_faster;
+    improve_io;
 
 #ifndef SUBMIT
     cout << "# From the test input " << endl;
     from_test_case;
 #endif
-
-	solution();
 
     return 0;
 }
