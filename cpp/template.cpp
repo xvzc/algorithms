@@ -20,7 +20,7 @@ using namespace std;
 
 /* ----------------------------------------------- */
 
-#define SUBMIT
+// #define SUBMIT
 int main() {
     improve_io;
 
