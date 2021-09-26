@@ -16,8 +16,11 @@ vector<vector<int>> multiply_matrix(vector<vector<int>> m1, vector<vector<int>> 
     return ret;
 }
 
-vector<vector<int>> matrix_power(vector<vector<int>> m, int x, int mod) {
-    vector<vector<int>> ret(m[0].size(), vector<int>(m.size(), 0));
+vector<vector<int>> matrix_power(vector<vector<int>> m, unsigned long long x, int mod) {
+    vector<vector<int>> ret(m.size(), vector<int>(m.size(), 0));
+    for (int i = 0; i < ret.size(); ++i)
+        for(int j = 0; j < ret.size(); ++j)
+            if(i == j) ret[i][j] = 1;
 
     while(x) {
         if(x % 2)
@@ -29,4 +32,3 @@ vector<vector<int>> matrix_power(vector<vector<int>> m, int x, int mod) {
 
     return ret;
 }
- 

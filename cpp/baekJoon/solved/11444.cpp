@@ -6,7 +6,6 @@
 
 #define fi first
 #define se second
-#define MOD 1000
 
 typedef long long ll;
 typedef unsigned long long ull;
@@ -31,6 +30,23 @@ vector<vector<int>> multiply_matrix(vector<vector<int>> m1, vector<vector<int>> 
 
     return ret;
 }
+
+vector<vector<int>> matrix_power(vector<vector<int>> m, ull x, int mod) {
+    vector<vector<int>> ret(m.size(), vector<int>(m.size(), 0));
+    for (int i = 0; i < ret.size(); ++i)
+        for(int j = 0; j < ret.size(); ++j)
+            if(i == j) ret[i][j] = 1;
+
+    while(x) {
+        if(x % 2)
+            ret = multiply_matrix(ret , m, mod);
+
+        x = x >> 1;
+        m = multiply_matrix(m, m, mod);
+    }
+
+    return ret;
+}
 /* ----------------------------------------------- */
 
 #define SUBMIT
@@ -41,37 +57,21 @@ int main() {
     cout << "# From the test input " << endl;
     from_test_case;
 #endif
-    int n;
-    ll b; cin >> n >> b;
 
-    vector<vector<int>> m(n, vector<int>(n, 0));
-    for (int i = 0; i < n; ++i) {
-        for (int j = 0; j < n; ++j)
-            cin >> m[i][j];
-    }
+    vector<vector<int>> E = {
+                             {1, 1}, 
+                             {1, 0}
+                            };
+    vector<vector<int>> first = {
+                                 {1}, 
+                                 {0}
+                                };
 
-    vector<vector<int>> answer(n, vector<int>(n, 0));
-    for(int i = 0; i < n; ++i) {
-        for(int j = 0; j < n; ++j) {
-            if(i == j) answer[i][j] = 1;
-        }
-    }
+    ull n; cin >> n;
+    vector<vector<int>> ret = matrix_power(E, n, 1000000007);
 
-    while(b) {
-        if(b % 2)
-            answer = multiply_matrix(answer, m, MOD);
-
-        b = b >> 1;
-        m = multiply_matrix(m, m, MOD);
-    }
-
-    for(auto v : answer) {
-        for(auto i : v) {
-            cout << i << ' ';
-        }
-        cout << endl;
-    }
+    ret = multiply_matrix(ret, first, 1000000007);
+    cout << ret[1][0] << endl;
 
     return 0;
 }
-
