@@ -56,10 +56,6 @@ PS study.
 [Source code](https://github.com/jerry901/algorithms/blob/main/study/data_structure/set_union.cpp)  
 > 두개의 Set 자료구조의 합집합을 구하는 예제.
 
-#### Uniordered Map
-[Source code](https://github.com/jerry901/algorithms/blob/main/study/data_structure/unordered_map.cpp)  
-> unordered_map 자료구조 사용 예제.
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 ### 문자열
