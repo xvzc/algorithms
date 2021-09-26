@@ -19,14 +19,12 @@ using namespace std;
 
 /* - FUNCTIONS ----------------------------------- */
 vector<vector<int>> multiply_matrix(vector<vector<int>> v1, vector<vector<int>> v2) {
-    vector<vector<int>> a = v1;
-    vector<vector<int>> b = v2;
-    vector<vector<int>> ret(v1.size(), vector<int>(v1.size(), 0));
+    vector<vector<int>> ret(v1[0].size(), vector<int>(v1.size(), 0));
     int n = v1.size();
     for(int i = 0; i < n; ++i) {
         for(int j = 0; j < n; ++j) {
             for(int k = 0; k < n; ++k) {
-                ret[i][j] = ((ret[i][j] % MOD) + (((ll)a[i][k] % MOD) * ((ll)b[k][j] % MOD)) % MOD) % MOD;
+                ret[i][j] = ((ret[i][j] % MOD) + (((ll)v1[i][k] % MOD) * ((ll)v2[k][j] % MOD)) % MOD) % MOD;
             }
         }
     }
