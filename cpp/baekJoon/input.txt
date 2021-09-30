@@ -1,4 +1,4 @@
-3
-config.sys
-config.inf
-configures
+10 3
+20 8
+40 7
+60 4
