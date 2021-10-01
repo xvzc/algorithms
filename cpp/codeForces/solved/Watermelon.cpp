@@ -28,25 +28,18 @@ int main() {
     cout << "# From the test input " << endl;
     from_test_case;
 #endif
-    int N, temp;
-    cin >> N;
-
-    stack<int> st;
-    vector<int> v(N);
-    vector<int> ans(N, -1);
-
-    for(int i = 0; i < N; ++i) cin >> v[i];
-
-    for(int i = 0; i < N; ++i) {
-        while(!st.empty() && v[st.top()] < v[i]) {
-            ans[st.top()] = v[i];
-            st.pop();
-        }
-        st.push(i);
+    int n; cin >> n;
+    if(n == 2) {
+        cout << "NO";
+        return 0;
     }
 
-    for(auto i : ans) cout << i << ' ';
+    if(n % 2) {
+        cout << "NO";
+        return 0;
+    }
 
+    cout << "YES";
     return 0;
 }
 
