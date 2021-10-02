@@ -12,25 +12,23 @@ typedef unsigned long long ull;
 
 using namespace std;
 
-/* - GLOBAL VARIABLES ---------------------------- */
-/* ----------------------------------------------- */
-
 /* - FUNCTIONS ----------------------------------- */
-vector<int> tokenize(string str, char delimeter) {
-    vector<int> tokens;
-    stringstream ss(str);
+ll solution(vector<ll> &v) {
+    vector<ll> s;
 
-    string token;
-    while (getline(ss, token, delimeter)) 
-        tokens.push_back(stoi(token));
+    for(int i = 0; i < v.size(); ++i) {
+        while(!s.empty() && v[s.back()] >= v[i]) {
+            s.pop_back();
+        }
 
-    return tokens;
-}
+        s.push_back(i);
+    }
 
-ll solution(vector<int> &v) {
-    ll answer = 0;
+    for(auto i : s) 
+        cout << v[i] << ' ';
+    cout << endl;
 
-    return answer;
+    return 0LL;
 }
 /* ----------------------------------------------- */
 
@@ -42,14 +40,17 @@ int main() {
     cout << "# From the test input " << endl;
     from_test_case;
 #endif
-    while(1) {
-        string str;
-        getline(cin, str);
 
-        if(str.size() == 1 && str[0] == '0')
+    while(true) {
+        int n; 
+        cin >> n;
+
+        if(n == 0) 
             break;
 
-        vector<int> v = tokenize(str, ' ');
+        vector<ll> v(n); 
+        for(int i = 0; i < n; ++i) 
+            cin >> v[i];
 
         cout << solution(v) << endl;
     }
