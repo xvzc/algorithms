@@ -15,18 +15,18 @@ using namespace std;
 /* - FUNCTIONS ----------------------------------- */
 ll solution(vector<ll> &v) {
     vector<ll> s;
+    ll _max = 0;
 
     for(int i = 0; i < v.size(); ++i) {
-        while(!s.empty() && v[s.back()] >= v[i]) {
+        while(!s.empty() && v[s.back()] > v[i]) {
             s.pop_back();
         }
-
         s.push_back(i);
     }
 
-    for(auto i : s) 
-        cout << v[i] << ' ';
-    cout << endl;
+    for(int i = s.size(); i > 0; --i) {
+
+    }
 
     return 0LL;
 }
