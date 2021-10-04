@@ -1,3 +1,17 @@
+#include <bits/stdc++.h>
+
+#define improve_io ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0)
+#define from_test_case (void)!freopen("input.txt", "r", stdin)
+#define endl '\n'
+
+#define fi first
+#define se second
+
+typedef long long ll;
+typedef unsigned long long ull;
+
+using namespace std;
+
 //구현 1. fread/fwrite 이용
 /////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -123,3 +137,38 @@ OUTPUT& operator<< (OUTPUT& out, T i) {
 #define istream INPUT
 #define ostream OUTPUT
 /////////////////////////////////////////////////////////////////////////////////////////////
+
+/* - GLOBAL VARIABLES ---------------------------- */
+
+/* ----------------------------------------------- */
+
+/* - FUNCTIONS ----------------------------------- */
+
+/* ----------------------------------------------- */
+
+#define SUBMIT
+int main() {
+
+#ifndef SUBMIT
+    cout << "# From the test input " << endl;
+    from_test_case;
+#endif
+    int n, m, temp;
+    unordered_map<int, int> um;
+
+    cin >> n;
+    while(n--) {
+        cin >> temp;
+        um[temp]++;
+    }
+
+    cin >> m;
+    while(m--) {
+        cin >> temp;
+        cout << um[temp] << ' ';
+    }
+    cout << endl;
+
+    return 0;
+}
+
