@@ -10,14 +10,6 @@ typedef unsigned long long ull;
 
 using namespace std;
 
-/* - GLOBAL VARIABLES ---------------------------- */
-
-/* ----------------------------------------------- */
-
-/* - FUNCTIONS ----------------------------------- */
-
-/* ----------------------------------------------- */
-
 #define SUBMIT
 int main() {
     ios_base::sync_with_stdio(false);
