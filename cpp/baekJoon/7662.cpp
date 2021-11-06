@@ -2,21 +2,7 @@
 
 #define endl '\n'
 
-#define fi first
-#define se second
-
-typedef long long ll;
-typedef unsigned long long ull;
-
 using namespace std;
-
-/* - GLOBAL VARIABLES ---------------------------- */
-
-/* ----------------------------------------------- */
-
-/* - FUNCTIONS ----------------------------------- */
-
-/* ----------------------------------------------- */
 
 #define SUBMIT
 int main() {
@@ -27,43 +13,44 @@ int main() {
     (void)!freopen("input.txt", "r", stdin);
     cout << "# From the test case" << endl;
 #endif
+
     int T; cin >> T;
     while(T--) {
-        priority_queue<int, vector<int>, greater<int>> pql;
-        priority_queue<int, vector<int>, less<int>> pqg;
+        multiset<int> ms;
 
-        int N; cin >> N;
+        int N; 
+        cin >> N;
+
         char c;
         int value;
-        int size = 0;
         for(int i = 0; i < N; ++i) {
             cin >> c >> value;
+
             if(c == 'I') {
-                pql.push(value);
-                pqg.push(value);
-                size++;
+                ms.insert(value);
                 continue;
             } 
 
-            if(value == 1) {
-                if(!size > 0) {
-                    pqg.pop();
-                    size--;
-                }
-            } else {
-                if(size > 0) {
-                    pql.pop();
-                    size--;
-                }
+            if(c == 'D' && value == 1) {
+                if(!ms.empty())
+                    ms.erase(prev(ms.end()));
+
+                continue;
+            }
+
+            if(c == 'D' && value == -1) {
+                if(!ms.empty())
+                    ms.erase(ms.begin());
+
+                continue;
             }
         }
 
-        if(size > 0)
-            cout << pqg.top() << ' ' << pql.top();
+        if(ms.empty())
+            cout << "EMPTY" << endl;
         else
-            cout << "EMPTY";
+            cout << *ms.rbegin() << ' ' << *ms.begin() << endl;
 
-        cout << endl;
     }
 
     return 0;
