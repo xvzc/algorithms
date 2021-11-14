@@ -10,15 +10,12 @@ typedef unsigned long long ull;
 
 using namespace std;
 
+/* - GLOBAL VARIABLES ---------------------------- */
 vector<ll> segment_tree;
 int x;
-
-/* - GLOBAL VARIABLES ---------------------------- */
-
 /* ----------------------------------------------- */
 
 /* - FUNCTIONS ----------------------------------- */
-
 void update(int idx, ll value) {
     idx += x-1;
     segment_tree[idx] = value;
@@ -88,11 +85,6 @@ int main() {
             continue;
         }
     }
-
-    // for(int i = 0 ;i < segment_tree.size(); ++i) {
-    //     cout << segment_tree[i] << ' ';
-    // }
-    // cout<< endl;
 
     return 0;
 }
