@@ -10,10 +10,8 @@ typedef unsigned long long ull;
 
 using namespace std;
 
-int DP[1001][11];
-
 /* - GLOBAL VARIABLES ---------------------------- */
-
+int DP[1001][11];
 /* ----------------------------------------------- */
 
 /* - FUNCTIONS ----------------------------------- */
