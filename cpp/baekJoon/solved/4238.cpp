@@ -21,6 +21,7 @@ using namespace std;
 /* ----------------------------------------------- */
 
 /* - FUNCTIONS ----------------------------------- */
+<<<<<<< Updated upstream
 double calculate_e(double dewpoint) {
     return 6.11 * exp(5417.7530 * ((1/273.16) - (1/(dewpoint+273.16))));
 }
@@ -41,10 +42,17 @@ double calculate_humidex(double temperature, double h) {
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(0); cout.tie(0);
+=======
+
+/* ----------------------------------------------- */
+
+int main() {
+>>>>>>> Stashed changes
 
     if constexpr (local) 
         (void)!freopen("input.txt", "r", stdin);
 
+<<<<<<< Updated upstream
     cout << fixed;
     cout.precision(1);
 
@@ -110,6 +118,24 @@ int main() {
         cout << ' ' << "H" << ' ' << round(H * 10) / 10 << endl;
 
     }
+=======
+    string first, temp;
+    double h, e, t, dewpoint;
+
+    do {
+        cin >> first >> t >> temp >> dewpoint;
+
+        e = round(6.11 * pow(2.718281828, 5417.7530 * ((1/273.16) - (1/(dewpoint+273.16))))*10)/10;
+
+        h = round((0.5555)*(e - 10.0) * 10)/ 10 + t;
+        const char* format = "T %.1f D %.1f H %.1f\n";
+
+        if(first == "E")
+            break;
+        printf(format, round(t * 10)/10, round(dewpoint * 10)/10, round(h * 10)/10);
+
+    } while(1);
+>>>>>>> Stashed changes
 
     return 0;
 }
