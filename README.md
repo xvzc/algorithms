@@ -17,7 +17,7 @@ PS study.
 > 기본적인 너비 우선 탐색을 큐 자료구조를 활용해 구현.  
 
 #### DFS
-[Source code](https://github.com/jerry901/algorithms/blob/main/study/search/bfs_queue.cpp)  
+[Source code](https://github.com/jerry901/algorithms/blob/main/study/search/dfs_recursive.cpp)  
 > 기본적인 깊이 우선 탐색을 재귀적으로 구현.
 
 #### 이분 탐색(Binary Search)
