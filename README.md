@@ -2,7 +2,6 @@
 PS study.
 
 # Table of Contents
-
 - [탐색](https://github.com/xvzc/algorithms#탐색)
 - [수학](https://github.com/xvzc/algorithms#수학)
 - [자료구조](https://github.com/xvzc/algorithms#자료구조)
