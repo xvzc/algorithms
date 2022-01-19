@@ -7,7 +7,7 @@ PS study.
 - [자료구조](https://github.com/xvzc/algorithms#자료구조)
 - [문자열](https://github.com/xvzc/algorithms#문자열)
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+- - - - - - - - - - - - - - - - - - - - - -
   
 ### 탐색
 
@@ -23,7 +23,7 @@ PS study.
 [Source code](https://github.com/xvzc/algorithms/blob/main/study/search/binary_search.cpp)  
 > 데이터가 정렬 되어있다면 O(log N) 복잡도로 검색할 수 있음.
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+- - - - - - - - - - - - - - - - - - - - - -
 
 ### 수학
 
@@ -47,15 +47,19 @@ PS study.
 [Source code](https://github.com/xvzc/algorithms/blob/main/study/math/matrix_power.cpp)  
 > 2차원 vector, 분할 정복을 활용한 행렬의 거듭제곱 계산.
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+- - - - - - - - - - - - - - - - - - - - - -
 
 ### 자료구조
 
-#### Set Union
+#### Set
 [Source code](https://github.com/xvzc/algorithms/blob/main/study/data_structure/set_union.cpp)  
 > 두개의 Set 자료구조의 합집합을 구하는 예제.
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+#### Priority Queue
+[Source code](https://github.com/xvzc/algorithms/blob/main/study/data_structure/priority_queue.cpp)  
+
+> pair의 second에 대한 우선순위 큐(최소 힙) 예제
+- - - - - - - - - - - - - - - - - - - - - -
 
 ### 문자열
 
@@ -67,4 +71,4 @@ PS study.
 [Source code](https://github.com/xvzc/algorithms/blob/main/study/string/tokenizer.cpp)  
 > getline() 과 stringstream을 활용하여 문자열을 특정 구분자로 자를 수 있음.
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+- - - - - - - - - - - - - - - - - - - - - -
