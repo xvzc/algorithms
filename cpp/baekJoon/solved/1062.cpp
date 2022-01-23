@@ -33,6 +33,7 @@ int main() {
             bits |= 1 << ((int)c - 'a');
 
         v[i] = bits;
+
     }
 
     int answer = 0;
@@ -56,4 +57,3 @@ int main() {
 
     return 0;
 }
-
