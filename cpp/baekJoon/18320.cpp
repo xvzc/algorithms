@@ -21,7 +21,22 @@ ll N, K, M;
 /* ----------------------------------------------- */
 
 /* - FUNCTIONS ----------------------------------- */
+ll get_days(ll G, ll X) {
+    ll amount = (N - G) / X;
 
+
+    if (amount < M) {
+        amount = M;
+    }
+
+    ll days = (N - G) / amount + 1;
+
+    if ((N - G) % amount) {
+        days++;
+    }
+
+    return days;
+}
 /* ----------------------------------------------- */
 
 int main() {
@@ -33,20 +48,42 @@ int main() {
 
     cin >> N >> K >> M;
 
-    ll daily_amount, days;
-
-    ll g_left = 1, g_right = N, g_mid, G = N + 1;
+    ll g_left = 1, g_right = N, g_mid, G = N + 1, X = -1;
     while (g_left <= g_right) {
+        g_mid = g_left + (g_right - g_left) / 2;
 
-    ll x_left = 1, x_right = N, x_mid, X = N + 1;
+        ll x_left = 1, x_right = N, x_mid;
         while (x_left <= x_right) {
-            x_mid = x_left + (r)
+            x_mid = x_left + (x_right - x_left) / 2;
+
+            ll days = get_days(g_mid, x_mid);
+
+            if (days >= K && X < x_mid) {
+                X = x_mid;
+                break;
+            }
+
+            if (days < K) {
+                x_left = x_mid + 1;
+            }
+
+            if (days > K) {
+                x_right = x_mid - 1;
+            }
         }
 
+        for (ll i = X; X >= 1; --i) {
+            if (get_days(g_mid, i) >= K) {
+                X = i;
+            } else {
+                break;
+            }
+        }
+
+        break;
     }
 
     cout << X << endl;
 
     return 0;
 }
-
