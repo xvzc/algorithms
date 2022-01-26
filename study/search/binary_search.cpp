@@ -3,24 +3,24 @@
 using namespace std;
 
 int bin_search(int num, vector<int> &vec){
-	int left=0;
-	int right=vec.size()-1;
-	int mid;
+    int left=0;
+    int right=vec.size()-1;
+    int mid;
 
-	while(left <= right) {
-		mid = left + (right-left)/2;
-		if(num == vec[mid])
+    while(left <= right) {
+        mid = left + (right-left)/2;
+        if(num == vec[mid])
             return mid;
-		else if(vec[mid] > num) {
-			right=mid-1;
-		}
-		else {
-			left=mid+1;
-		}
+        else if(vec[mid] > num) {
+            right=mid-1;
+        }
+        else {
+            left=mid+1;
+        }
 
-	}
+    }
 
-	return -1;
+    return -1;
 }
 
 int main() {

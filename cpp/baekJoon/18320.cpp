@@ -36,18 +36,65 @@ int main() {
 
     ll xl = 0; 
     ll xr = MAX;
-    ll X = xl + xr / 2;
-    while (xl <= xr) {
+    ll xm = xl + xr / 2;
+    ll X = LLONG_MAX;
+    while (xl < xr) {
         ll gl = 0;
         ll gr = MAX; 
-        ll G = gl + gr / 2;
-        while (gl <= gr) {
-            ll Y = (ll)((double)(N - G) / X);
-            Y = Y < M ? M : Y;
+        ll gm = gl + gr / 2;
+        ll G = LLONG_MAX;
+        while (gl < gr) {
+            ll gY = ((double)(N - gm) / xm);
+            gY = gY < M ? M : gY;
+            ll gdays = (N - gm) / gY;
+
+            if ((N - gm) % gY) {
+                gdays++;
+            }
+
+            if (gdays < K) {
+                gr = gm - 1;
+            }
+
+            if (gdays >= K) {
+                gl = gm + 1;
+            }
+
+            if (gdays >= K && gm < G) {
+                G = gm;
+            }
+
+            gm = gr + gl / 2;
         }
 
-        X = X + xl;
+        if (G == LLONG_MAX) {
+            continue;
+        }
+
+        ll xY = ((double)(N - G) / xm);
+        xY = xY < M ? M : xY;
+        ll xdays = (N - G) / xY;
+
+        if ((N - G) % xY) {
+            xdays++;
+        }
+
+        if (xdays < K) {
+            xl = xm + 1;
+        }
+
+        if (xdays >= K) {
+            xr = xm - 1;
+        }
+
+        xm = xl + xr / 2;
+
+        if (xdays >= K && xm < X) {
+            X = xm;
+        }
     }
+
+    cout << X << endl;
 
     return 0;
 }
