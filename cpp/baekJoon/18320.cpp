@@ -17,25 +17,38 @@ typedef unsigned long long ull;
 using namespace std;
 
 /* - GLOBAL VARIABLES ---------------------------- */
-ll N, K, M;
+ll N, K, M, maxx = LLONG_MAX;
 /* ----------------------------------------------- */
 
 /* - FUNCTIONS ----------------------------------- */
-ll get_days(ll G, ll X) {
-    ll amount = (N - G) / X;
+bool calculate(ll X) {
+    ll R = N;
+    ll days = 0;
 
+    while (1) {
+        ll Y = R / X;
 
-    if (amount < M) {
-        amount = M;
+        if (Y <= M) {
+            ll ret = days + (R + M - 1) / M;
+            return ret <= K;
+        }
+        
+        ll cur_left = Y*X;
+        ll days_left = (R - cur_left + Y) / Y;
+
+        days += days_left;
+
+        if (days > K) {
+            return false;
+        } 
+
+        R -= days_left*Y;
+        if (R <= 0) {
+            break;
+        }
     }
 
-    ll days = (N - G) / amount + 1;
-
-    if ((N - G) % amount) {
-        days++;
-    }
-
-    return days;
+    return days <= K;
 }
 /* ----------------------------------------------- */
 
@@ -48,42 +61,20 @@ int main() {
 
     cin >> N >> K >> M;
 
-    ll g_left = 1, g_right = N, g_mid, G = N + 1, X = -1;
-    while (g_left <= g_right) {
-        g_mid = g_left + (g_right - g_left) / 2;
+    ll lo = 1, hi = N, mid = (lo + hi) / 2;
+    ll answer = -1;
+    while(lo <= hi) {
+        mid = (lo + hi) / 2;
 
-        ll x_left = 1, x_right = N, x_mid;
-        while (x_left <= x_right) {
-            x_mid = x_left + (x_right - x_left) / 2;
-
-            ll days = get_days(g_mid, x_mid);
-
-            if (days >= K && X < x_mid) {
-                X = x_mid;
-                break;
-            }
-
-            if (days < K) {
-                x_left = x_mid + 1;
-            }
-
-            if (days > K) {
-                x_right = x_mid - 1;
-            }
+        if (calculate(mid)) {
+            lo = mid + 1;
+            answer = mid;
+        } else {
+            hi = mid - 1;
         }
-
-        for (ll i = X; X >= 1; --i) {
-            if (get_days(g_mid, i) >= K) {
-                X = i;
-            } else {
-                break;
-            }
-        }
-
-        break;
     }
 
-    cout << X << endl;
+    cout << answer << endl;
 
     return 0;
 }
