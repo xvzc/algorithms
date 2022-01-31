@@ -4,7 +4,7 @@
 #define endl '\n'
 #define fi first
 #define se second
-#define MAX 1010000
+#define MAX 1001005
 
 #ifdef LOCAL
 constexpr bool local = true;
@@ -19,10 +19,33 @@ using namespace std;
 
 /* - GLOBAL VARIABLES ---------------------------- */
 bool isPrime[MAX];
+vector<ll> squares;
 ll mini, maxi;
 /* ----------------------------------------------- */
 
 /* - FUNCTIONS ----------------------------------- */
+int count() {
+    vector<bool> is_no_square(maxi - mini + 1, true);
+
+    for (int i = 0; i < squares.size(); ++i) {
+        ll start = mini + squares[i] - (mini % squares[i]);
+
+        if (mini % squares[i] == 0)
+            start = mini;
+
+        for (ll j = start; j <= maxi; j+=squares[i]) {
+            is_no_square[j - mini] = false;
+        }
+    }
+
+    int answer = 0;
+    for (int i = 0; i < is_no_square.size(); ++i) {
+        if (is_no_square[i])
+            answer++;
+    }
+
+    return answer;
+}
 /* ----------------------------------------------- */
 
 int main() {
@@ -35,7 +58,9 @@ int main() {
 
     memset(isPrime, true, sizeof(isPrime));
 
-    for (int i = 2; i*i <= MAX; ++i) {
+    cin >> mini >> maxi;
+
+    for (int i = 2; i < MAX; ++i) {
         if (!isPrime[i]) {
             continue;
         }
@@ -45,27 +70,14 @@ int main() {
         }
     }
 
-    cin >> mini >> maxi;
-
-    vector<ll> noSquare(maxi - mini + 1, true);
-
-    for (int i = 2; i <= maxi; ++i) {
-        if (!isPrime[i])
-            continue;
-
-        ll square = i*i;
-        for (ll j = mini + (mini % square); j <= maxi; j+=square) {
-            noSquare[j - mini] = false;
+    for (int i = 2; i < MAX; ++i) {
+        if (isPrime[i]) {
+            squares.push_back((ll)i*i);
         }
     }
 
-    int answer = 0;
-    for (auto b : noSquare) {
-        if (b)
-            answer++;
-    }
-
-    cout << answer << endl;
+    cout << count() << endl;
+    // cout << "waef" << endl;
 
     return 0;
 }
