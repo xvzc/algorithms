@@ -55,7 +55,6 @@ int solve(int target) {
 
             dp[i][j] = min(mini + maxi, dp[i][j]);
 
-
         }
     }
 

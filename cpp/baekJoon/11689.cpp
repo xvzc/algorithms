@@ -23,14 +23,6 @@ bool is_prime[MAX];
 /* ----------------------------------------------- */
 
 /* - FUNCTIONS ----------------------------------- */
-void trace(bool arr[]) {
-    for (int i = 0; i < 100; i++) {
-        if (arr[i]) {
-            cout << i << ' ';
-        } 
-    }cout << endl;
-}
-
 ll exponent(int p, int a) {
     ll ret = 1;
 
@@ -60,12 +52,12 @@ int main() {
     is_prime[0] = false;
     is_prime[1] = false;
 
-    for (ll i = 2; i*i < MAX; ++i) {
+    for (int i = 2; i*i < MAX; ++i) {
         if (!is_prime[i]) {
             continue;
         }
 
-        for (ll j = i*i; j < MAX; j+=i) {
+        for (int j = i*i; j < MAX; j+=i) {
             is_prime[j] = false;
         }
     }
@@ -89,9 +81,7 @@ int main() {
             N /= prime;
         }
 
-        if (n == 1) {
-            answer *= prime - 1;
-        } else if (n > 1) {
+        if (n >= 1) {
             answer *= totient(prime, n);
         }
     }
