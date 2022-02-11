@@ -71,4 +71,4 @@ PS study.
 [Source code](https://github.com/xvzc/algorithms/blob/main/study/string/tokenizer.cpp)  
 > getline() 과 stringstream을 활용하여 문자열을 특정 구분자로 자를 수 있음.
 
-- - - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - -  
