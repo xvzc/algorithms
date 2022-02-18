@@ -74,3 +74,4 @@ with open(file_path, 'r') as file:
     }
 
     response = requests.post(url, data=payload, cookies=cookies_dict)
+    print('DONE')
