@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import os
 import sys
 import ntpath
 
@@ -58,10 +59,14 @@ with open(file_path, 'r') as file:
 
     html = response.text
     soup = BeautifulSoup(html, 'html.parser')
-    inputs = soup.select('input')
+    input_tags = soup.select('input')
+
+    if input_tags[1]['name'] == 'login_user_id':
+        print('Login required')
+        exit(0)
 
     csrf_key = ""
-    for i in inputs:
+    for i in input_tags:
         if i['name'] == 'csrf_key':
             csrf_key = i['value']
 
@@ -74,4 +79,5 @@ with open(file_path, 'r') as file:
     }
 
     response = requests.post(url, data=payload, cookies=cookies_dict)
-    print('DONE')
+
+    os.system('open -a Firefox "https://www.acmicpc.net/status?user_id=jry9913"')
