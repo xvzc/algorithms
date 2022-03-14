@@ -4,6 +4,7 @@
 #define endl '\n'
 #define fi first
 #define se second
+#define all(x) x.begin(),x.end()
 
 #ifdef LOCAL
 constexpr bool local = true;
