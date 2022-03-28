@@ -18,6 +18,8 @@ using namespace std;
 
 /* - GLOBAL VARIABLES ---------------------------- */
 int cnt[101][101];
+int indeg[101];
+vector<pair<int, int>> parts[101];
 /* ----------------------------------------------- */
 
 /* - FUNCTIONS ----------------------------------- */
@@ -33,8 +35,6 @@ int main() {
 
     int N, M; cin >> N >> M;
 
-    vector<vector<pair<int, int>>> parts(N + 1);
-    vector<int> indeg(N + 1);
     while (M--) {
         int x, y, z; cin >> x >> y >> z;
         parts[y].push_back({x, z});
@@ -74,4 +74,3 @@ int main() {
 
     return 0;
 }
-
