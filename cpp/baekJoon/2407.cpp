@@ -24,22 +24,14 @@ vector<vector<string>> dp(102, vector<string>(102, "0"));
 
 string add(string num1, string num2) {
     string ret;
-    int carry = 0;
-    string padding = "";
 
-    for (int i = 0; i < abs((int)num1.length() - (int)num2.length()); ++i) {
-        padding += "0";
-    }
+    string *temp = num1.size() < num2.size() ? &num1 : &num2;
+    *temp = string(abs(int(num1.size() - num2.size())), '0') + *temp;
 
-    if (num1.size() < num2.size()) {
-        num1 = padding + num1;
-    } else {
-        num2 = padding + num2;
-    }
-
+    bool carry = 0;
     for (int i = 0; i < num1.size(); ++i) {
-        int digit1 = num1[num1.size() - i - 1] - '0';
-        int digit2 = num2[num2.size() - i - 1] - '0';
+        int digit1 = *(num1.rbegin() + i) - '0';
+        int digit2 = *(num2.rbegin() + i) - '0';
         int sum = digit1 + digit2 + carry;
         carry = sum >= 10 ? 1 : 0;
         sum %= 10;
