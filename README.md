@@ -9,7 +9,7 @@ PS study.
 
 - - - - - - - - - - - - - - - - - - - - - -
   
-### 탐색
+### 탐색(Searching)
 
 #### BFS
 [Source code](https://github.com/xvzc/algorithms/blob/main/study/search/bfs_queue.cpp)  
@@ -25,7 +25,7 @@ PS study.
 
 - - - - - - - - - - - - - - - - - - - - - -
 
-### 수학
+### 수학(Math)
 
 #### 확장 유클리드 호제법(EGCD)
 [Source code](https://github.com/xvzc/algorithms/blob/main/study/math/extended_gcd.cpp)  
@@ -49,7 +49,7 @@ PS study.
 
 - - - - - - - - - - - - - - - - - - - - - -
 
-### 자료구조
+### 자료구조(Data structure)
 
 #### Set
 [Source code](https://github.com/xvzc/algorithms/blob/main/study/data_structure/set_union.cpp)  
@@ -61,13 +61,13 @@ PS study.
 > pair의 second에 대한 우선순위 큐(최소 힙) 예제
 - - - - - - - - - - - - - - - - - - - - - -
 
-### 문자열
+### 문자열(String)
 
-#### 공백단위로 자르기
+#### 공백단위로 자르기(Spliting strings by spaces)
 [Source code](https://github.com/xvzc/algorithms/blob/main/study/string/whitespace_tokenizer.cpp)  
 > stringstream을 활용하여 문자열을 공백단위로 자르는 예제.
 
-#### 특정 문자로 자르기
+#### 특정 문자로 자르기(Spliting strings by delimiter)
 [Source code](https://github.com/xvzc/algorithms/blob/main/study/string/tokenizer.cpp)  
 > getline() 과 stringstream을 활용하여 문자열을 특정 구분자로 자를 수 있음.
 
