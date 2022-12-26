@@ -35,17 +35,21 @@ PS study.
 [Source code](https://github.com/xvzc/algorithms/blob/main/study/math/fast_exponent.cpp)  
 > 지수 법칙을 활용하면 a^p mod p를 O(log N) 복잡도로 구할 수 있음.
 
-#### 순열
+#### 순열(Permutation)
 [Source code](https://github.com/xvzc/algorithms/blob/main/study/math/next_permutation.cpp)  
 > next_permutation()을 활용하여 벡터의 모든 순열을 구할 수 있음.
 
-#### 행렬의 곱셈
+#### 행렬의 곱셈(Matrix multiplication)
 [Source code](https://github.com/xvzc/algorithms/blob/main/study/math/multiply_matrix.cpp)  
 > 2차원 vector를 활용한 행렬의 곱셈.
 
-#### 행렬의 거듭제곱
+#### 행렬의 거듭제곱(Matrix Exponentiation)
 [Source code](https://github.com/xvzc/algorithms/blob/main/study/math/matrix_power.cpp)  
 > 2차원 vector, 분할 정복을 활용한 행렬의 거듭제곱 계산.
+
+#### 디오판토스 방정식(Diophantine equation)
+[Source code](https://github.com/xvzc/algorithms/blob/main/study/math/diophantine_equation.cpp)  
+> 디오판토스 방정식의 일반해 구현.
 
 - - - - - - - - - - - - - - - - - - - - - -
 
