@@ -1,0 +1,7 @@
+import sys
+input = sys.stdin.readline
+
+ax, ay, az = map(int, input().split())
+cx, cy, cz = map(int, input().split())
+
+print(cx - az, cy // ay, cz - ax)
