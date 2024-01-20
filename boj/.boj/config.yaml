@@ -9,7 +9,7 @@ filetype:
   cpp:
     language: 'c++17'
     filename: main.cpp
-    compile: 'g++ -std=c++17 -O2 -Wall -Wno-sign-compare $file -o a.out'
+    compile: 'g++ -std=c++17 -O2 -DLOCAL -Wall -Wno-sign-compare $file -o a.out'
     run: './a.out'
     after: rm -rf a.out
     manifest_files:
