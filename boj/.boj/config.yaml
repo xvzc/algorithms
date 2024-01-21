@@ -1,6 +1,6 @@
 workspace:
   problem_dir: problems # Default: ""
-  archive_dir: archives
+  archive_dir: solved
 filetype:
   py:
     language: 'python3'
