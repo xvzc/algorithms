@@ -6,7 +6,7 @@
 #define IF_LOCAL if constexpr (false)
 #endif
 
-#define debug IF_LOCAL std::cout
+#define debug IF_LOCAL std::cout << "[DEBUG] "
 #define endl '\n'
 #define fi first
 #define se second
