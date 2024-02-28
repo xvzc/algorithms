@@ -36,5 +36,22 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
 
+  int N, K;
+  cin >> N >> K;
+
+  vector<int> factors;
+  for (int i = 1; i / 2 <= N; ++i) {
+    if (N % i == 0) {
+      factors.push_back(i);
+    }
+  }
+
+  if (factors.size() < K) {
+    cout << 0 << endl;
+    return 0;
+  }
+
+  cout << factors[K - 1] << endl;
+
   return 0;
 }

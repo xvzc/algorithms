@@ -36,5 +36,26 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
 
+  vector<vector<int>> v(10, vector<int>(10, 0));
+  for (int i = 1; i < 10; ++i) {
+    for (int j = 1; j < 10; ++j) {
+      cin >> v[i][j];
+    }
+  }
+
+  int max = -1e9;
+  int row = 0, col = 0;
+  for (int i = 1; i < 10; ++i) {
+    for (int j = 1; j < 10; ++j) {
+      if (v[i][j] > max) {
+        row = i, col = j;
+        max = v[i][j];
+      }
+    }
+  }
+
+  cout << max << endl;
+  cout << row << ' ' << col;
+
   return 0;
 }

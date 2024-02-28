@@ -23,10 +23,10 @@ ostream& operator<<(ostream& os, const pair<X, Y>& p) {
   return os;
 }
 
-template <class C, class T, class Container>
-basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
-  auto it = c.begin();
+template <class A, class B, class Container>
+basic_ostream<A, B>& operator<<(basic_ostream<A, B>& os, Container const& c) {
   os << "{";
+  auto it = c.begin();
   while (it != c.end()) os << *it++ && it != c.end() && os << ", ";
   return os << "}";
 }
@@ -35,6 +35,31 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+
+  vector<vector<int>> v(100, vector<int>(100, 0));
+
+  int N;
+  cin >> N;
+  int x, y;
+  for (int i = 0; i < N; ++i) {
+    cin >> x >> y;
+    for (int i = 0; i < 10; ++i) {
+      for (int j = 0; j < 10; ++j) {
+        v[x + i][y + j] = 1;
+      }
+    }
+  }
+
+  int answer = 0;
+  for (int i = 0; i < 100; ++i) {
+    for (int j = 0; j < 100; ++j) {
+      if (v[i][j]) {
+        answer++;
+      }
+    }
+  }
+
+  cout << answer;
 
   return 0;
 }

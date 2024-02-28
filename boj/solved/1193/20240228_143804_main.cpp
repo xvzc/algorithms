@@ -36,5 +36,25 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
 
+  int X;
+  cin >> X;
+
+  int z = 1;
+  while (z * (z + 1) / 2 < X) {
+    z++;
+  }
+
+  int pre_sum = z * (z - 1) / 2;
+  int a = z - (X - pre_sum - 1);
+  int b = 1 + (X - pre_sum - 1);
+
+  if (z % 2 == 0) {
+    a = a + b;
+    b = a - b;
+    a = a - b;
+  }
+
+  cout << a << '/' << b;
+
   return 0;
 }

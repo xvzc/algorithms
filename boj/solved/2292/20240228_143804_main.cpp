@@ -36,5 +36,16 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
 
+  int N;
+  cin >> N;
+
+  int start = 1;
+  int shell = 1;
+  while (start < N) {
+    start += 6 * shell++;
+  }
+
+  cout << shell;
+
   return 0;
 }

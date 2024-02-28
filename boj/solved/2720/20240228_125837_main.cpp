@@ -33,8 +33,36 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
+vector<int> make_changes(int amount) {
+  vector<int> ret;
+  ret.push_back(amount / 25);
+  amount %= 25;
+
+  ret.push_back(amount / 10);
+  amount %= 10;
+
+  ret.push_back(amount / 5);
+  amount %= 5;
+
+  ret.push_back(amount);
+
+  return ret;
+}
+
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+
+  int T;
+  cin >> T;
+  for (int i = 0; i < T; ++i) {
+    int C;
+    cin >> C;
+    vector<int> changes = make_changes(C);
+    for (auto c : changes) {
+      cout << c << ' ';
+    }
+    cout << endl;
+  }
 
   return 0;
 }

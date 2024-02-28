@@ -36,5 +36,9 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
 
+  int A, B, V;
+  cin >> A >> B >> V;
+  cout << (V - A) / (A - B) + ((V - A) % (A - B) ? 1 : 0) + 1 << endl;
+
   return 0;
 }

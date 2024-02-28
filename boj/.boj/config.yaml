@@ -6,13 +6,9 @@ workspace:
   ongoing_dir: problems
   archive_dir: solved
 filetype:
-  py:
-    language: python3
-    filename: main.py
-    run: "python3 $file"
   cpp:
     language: "c++17"
-    filename: main.cpp
+    main: main.cpp
     source_templates: 
       - main.cpp
     root_templates:

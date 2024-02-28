@@ -36,5 +36,11 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
 
+  ll N;
+  cin >> N;
+  int p = pow(2, N) + 1;
+
+  cout << p * p;
+
   return 0;
 }

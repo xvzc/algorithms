@@ -36,5 +36,17 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
 
+  vector<string> v(5);
+  for (int i = 0; i < 5; ++i) cin >> v[i];
+
+  size_t max_len = 0;
+  for (auto s : v) max_len = max(max_len, s.length());
+
+  for (int i = 0; i < max_len; ++i) {
+    for (int j = 0; j < v.size(); ++j) {
+      if (i < v[j].length()) cout << v[j][i];
+    }
+  }
+
   return 0;
 }

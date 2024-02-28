@@ -36,5 +36,20 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
 
+  int a, b;
+  while (true) {
+    cin >> a >> b;
+    if (a == 0 and b == 0) {
+      break;
+    }
+    if (b % a == 0) {
+      cout << "factor" << endl;
+    } else if (a % b == 0) {
+      cout << "multiple" << endl;
+    } else {
+      cout << "neither" << endl;
+    }
+  }
+
   return 0;
 }
