@@ -35,6 +35,28 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+  int N, M;
+  cin >> N >> M;
+  string temp;
+  set<string> a;
+  for (int i = 0; i < N; ++i) {
+    cin >> temp;
+    a.insert(temp);
+  }
+
+  set<string> b;
+  for (int i = 0; i < M; ++i) {
+    cin >> temp;
+    b.insert(temp);
+  }
+
+  set<string> intersect;
+  set_intersection(all(a), all(b), inserter(intersect, intersect.begin()));
+
+  cout << intersect.size() << endl;
+  for (auto s : intersect) {
+    cout << s << endl;
+  }
 
   return 0;
 }

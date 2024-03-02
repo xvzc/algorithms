@@ -35,6 +35,21 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+  int N, M, temp;
+
+  cin >> N;
+
+  unordered_map<int, int> cards;
+  for (int i = 0; i < N; ++i) {
+    cin >> temp;
+    cards[temp]++;
+  }
+
+  cin >> M;
+  for (int i = 0; i < M; ++i) {
+    cin >> temp;
+    cout << cards[temp] << ' ';
+  }
 
   return 0;
 }

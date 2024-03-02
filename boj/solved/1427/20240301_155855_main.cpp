@@ -35,6 +35,10 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+  string s;
+  cin >> s;
+  sort(s.begin(), s.end(), greater<char>());
+  cout << s << endl;
 
   return 0;
 }

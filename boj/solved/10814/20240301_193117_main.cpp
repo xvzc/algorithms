@@ -32,9 +32,36 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+struct member {
+  int age;
+  string name;
+  int order;
+};
+
+bool compare(member m1, member m2) {
+  if (m1.age == m2.age) {
+    return m1.order < m2.order;
+  }
+
+  return m1.age < m2.age;
+}
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+
+  int N;
+  cin >> N;
+  vector<member> members(N);
+  for (int i = 0; i < N; ++i) {
+    cin >> members[i].age >> members[i].name;
+    members[i].order = i;
+  }
+
+  sort(all(members), compare);
+
+  for (auto m : members) {
+    cout << m.age << ' ' << m.name << endl;
+  }
 
   return 0;
 }

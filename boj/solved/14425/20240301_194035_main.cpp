@@ -35,6 +35,25 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+  int N, M;
+  cin >> N >> M;
+
+  string temp;
+  unordered_set<string> words;
+  for (int i = 0; i < N; ++i) {
+    cin >> temp;
+    words.insert(temp);
+  }
+
+  int answer = 0;
+  for (int i = 0; i < M; ++i) {
+    cin >> temp;
+    if (words.find(temp) != words.end()) {
+      answer++;
+    }
+  }
+
+  cout << answer;
 
   return 0;
 }

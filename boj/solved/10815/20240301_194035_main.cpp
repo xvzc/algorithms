@@ -35,6 +35,24 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+  int N, M;
+  cin >> N;
+  int temp;
+  unordered_set<int> valid_cards;
+  for (int i = 0; i < N; ++i) {
+    cin >> temp;
+    valid_cards.insert(temp);
+  }
+
+  cin >> M;
+  for (int i = 0; i < M; ++i) {
+    cin >> temp;
+    if (valid_cards.find(temp) != valid_cards.end()) {
+      cout << '1' << ' ';
+    } else {
+      cout << '0' << ' ';
+    }
+  }
 
   return 0;
 }

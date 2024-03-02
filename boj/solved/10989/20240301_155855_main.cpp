@@ -35,6 +35,21 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+  int N;
+  cin >> N;
+  int arr[10001] = { 0, };
+
+  int x;
+  for (int i = 0; i < N; ++i) {
+    cin >> x;
+    arr[x]++;
+  }
+
+  for (int i = 1; i <= 10000; ++i) {
+    while(arr[i]--) {
+      cout << i << endl;
+    }
+  }
 
   return 0;
 }

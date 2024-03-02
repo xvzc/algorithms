@@ -35,6 +35,26 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+  int N, M, temp;
+  cin >> N >> M;
+  unordered_set<int> s;
+  for (int i = 0; i < N; ++i) {
+    cin >> temp;
+    s.insert(temp);
+  }
+
+  for (int i = 0; i < M; ++i) {
+    cin >> temp;
+    auto it = s.find(temp);
+    if (it != s.end()) {
+      s.erase(it);
+      continue;
+    }
+
+    s.insert(temp);
+  }
+
+  cout << s.size() << endl;
 
   return 0;
 }

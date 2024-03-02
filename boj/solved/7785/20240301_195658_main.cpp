@@ -35,6 +35,23 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+  int N;
+  cin >> N;
+
+  set<string, greater<>> employees;
+  string name, operation;
+  for (int i = 0; i < N; ++i) {
+    cin >> name >> operation;
+    if (operation == "enter") {
+      employees.insert(name);
+    } else {
+      employees.erase(employees.find(name));
+    }
+  }
+
+  for (auto s : employees) {
+    cout << s << endl;
+  }
 
   return 0;
 }

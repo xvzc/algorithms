@@ -35,6 +35,37 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+  int N, M;
+  cin >> N >> M;
+
+  vector<string> v(N);
+  for (int i = 0; i < N; ++i) {
+    cin >> v[i];
+  }
+
+  string s;
+  unordered_map<string, int> dict;
+  for (int i = 0; i < v.size(); ++i) {
+    dict[v[i]] = i;
+  }
+
+  string temp;
+  for (int i = 0; i < M; ++i) {
+    cin >> temp;
+    bool is_number = true;
+    for (auto& c : temp) {
+      if (!isdigit(c)) {
+        is_number = false;
+        continue;
+      }
+    }
+
+    if (is_number) {
+      cout << v[stoi(temp) - 1] << endl;
+    } else {
+      cout << dict[temp] + 1 << endl;
+    }
+  }
 
   return 0;
 }

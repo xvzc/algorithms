@@ -36,5 +36,15 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
 
+
+  vector<int> v(5);
+  for (int i = 0; i < 5; ++i) {
+    cin >> v[i];
+  }
+
+  cout << accumulate(all(v), 0)/5 << endl;
+  sort(all(v));
+  cout << v[2];
+
   return 0;
 }

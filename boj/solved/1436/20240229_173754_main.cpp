@@ -31,10 +31,29 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
   return os << "}";
 }
 
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+
+  int n;
+  cin >> n;
+  vector<int> numbers;
+
+  int count = 0;
+  int i = 666;
+  while (count < n) {
+    if (to_string(i).find("666") != string::npos) {
+      count++;
+    }
+
+    if (count == n) {
+      cout << i;
+      return 0;
+    }
+
+    i++;
+  }
 
   return 0;
 }

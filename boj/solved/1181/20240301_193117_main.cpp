@@ -33,8 +33,30 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
+bool compare(string s1, string s2) {
+  if (s1.length() == s2.length()) {
+    return s1 < s2;
+  }
+
+  return s1.length() < s2.length();
+}
+
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+
+  int N;
+  cin >> N;
+  vector<string> v(N);
+  for (int i = 0; i < N; ++i) {
+    cin >> v[i];
+  }
+
+  sort(all(v), compare);
+
+  v.erase(unique(v.begin(), v.end()), v.end());
+  for (auto& s : v) {
+    cout << s << endl;
+  }
 
   return 0;
 }

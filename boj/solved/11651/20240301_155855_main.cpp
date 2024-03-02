@@ -33,8 +33,31 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
+bool compare(pair<int, int> p1, pair<int, int> p2) {
+  if (p1.se == p2.se) {
+    return p1.fi < p2.fi;
+  }
+
+  return p1.se < p2.se;
+}
+
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+  int N;
+  cin >> N;
+
+  int a, b;
+  vector<pair<int, int>> v;
+  for (int i = 0; i < N; ++i) {
+    cin >> a >> b;
+    v.push_back({ a, b });
+  }
+
+  sort(all(v), compare);
+  for (auto p : v) {
+    cout << p.fi << ' ' << p.se << endl;
+  }
 
   return 0;
 }
+

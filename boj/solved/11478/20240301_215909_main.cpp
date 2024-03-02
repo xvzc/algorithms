@@ -36,5 +36,16 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
 
+  string s;
+  cin >> s;
+  unordered_set<string> sub_strings;
+  for (int i = 1; i <= s.length(); ++i) {
+    for (int j = 0; j <= s.length() - i; ++j) {
+      sub_strings.insert(s.substr(j, i));
+    }
+  }
+
+  cout << sub_strings.size();
+
   return 0;
 }

@@ -35,6 +35,19 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+  int N;
+  cin >> N;
+
+  int answer = 5001;
+  for (int i = 0; i <= 1000; ++i) {
+    for (int j = 0; j < 15; ++j) {
+      if (5 * i + 3 * j == N) {
+        answer = min(answer, i + j);
+      }
+    }
+  }
+
+  cout << (answer == 5001 ? -1 : answer) << endl;
 
   return 0;
 }

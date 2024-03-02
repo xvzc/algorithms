@@ -35,6 +35,25 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+  int N;
+  cin >> N;
+  vector<int> v(N);
+  for (int i = 0; i < N; ++i) {
+    cin >> v[i];
+  }
+
+  vector<int> copy = v;
+  sort(all(copy));
+  copy.erase(unique(all(copy)), copy.end());
+
+  unordered_map<int, int> compressed;
+  for (int i = 0; i < copy.size(); ++i) {
+    compressed[copy[i]] = i;
+  }
+
+  for (auto& i: v) {
+    cout << compressed[i] << ' ';
+  }
 
   return 0;
 }

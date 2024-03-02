@@ -31,10 +31,30 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
   return os << "}";
 }
 
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+int sum_digits(int n) {
+  string number = to_string(n);
+  int ret = 0;
+  for (auto c : number) {
+    ret += c - '0';
+  }
+
+  return ret + n;
+}
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+  int N;
+  cin >> N;
+
+  for (int i = 0; i < N; ++i) {
+    if (sum_digits(i) == N) {
+      cout << i;
+      return 0;
+    }
+  }
+
+  cout << 0;
 
   return 0;
 }

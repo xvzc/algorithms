@@ -35,6 +35,27 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+  int n;
+  cin >> n;
+
+  int v[1000] = {0, };
+  for (int i = 0; i < n; ++i) {
+    cin >> v[i];
+  }
+
+  for (int i = 0; i < n; ++i) {
+    for (int j = i + 1; j < n; ++j) {
+      if (v[i] > v[j]) {
+        v[i] ^= v[j];
+        v[j] ^= v[i];
+        v[i] ^= v[j];
+      }
+    }
+  }
+
+  for (int i = 0; i < n; ++i) {
+    cout << v[i] << endl;
+  }
 
   return 0;
 }

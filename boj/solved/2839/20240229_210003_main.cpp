@@ -31,10 +31,22 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
   return os << "}";
 }
 
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+  int N;
+  cin >> N;
+  vector<int> dp(5001, 1e9);
+  dp[3] = 1;
+  dp[5] = 1;
+
+  for (int i = 6; i <= 5000; ++i) {
+    dp[i] = min(dp[i - 3] == 1e9 ? 1e9 : (dp[i - 3] + 1),
+                dp[i - 5] == 1e9 ? 1e9 : (dp[i - 5] + 1));
+  }
+
+  cout << (dp[N] == 1e9 ? -1 : dp[N]);
 
   return 0;
 }
