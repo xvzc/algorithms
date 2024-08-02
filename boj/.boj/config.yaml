@@ -21,4 +21,4 @@ filetype:
     main: main.py
     source_templates: 
       - main.py
-    run: "python3 ./main.py"
+    run: "python3 $file"
