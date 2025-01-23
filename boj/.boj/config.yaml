@@ -17,7 +17,7 @@ filetype:
     run: "./a.out"
     after: rm -rf a.out
   py:
-    language: "pypy3"
+    language: "python3"
     main: main.py
     source_templates: 
       - main.py

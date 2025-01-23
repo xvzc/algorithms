@@ -1,0 +1,10 @@
+{
+    "id": "2525",
+    "title": "오븐 시계",
+    "filetype": "py",
+    "language": 28,
+    "source_path": "main.py",
+    "testcase_dir": "testcases",
+    "checksum": "b9b04d9f201e8f8e407c3650a866cd71",
+    "accepted": true
+}

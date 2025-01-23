@@ -1,0 +1,10 @@
+{
+    "id": "2884",
+    "title": "알람 시계",
+    "filetype": "py",
+    "language": 28,
+    "source_path": "main.py",
+    "testcase_dir": "testcases",
+    "checksum": "19083a884722d83c3c22d26c5b8d0e65",
+    "accepted": true
+}
