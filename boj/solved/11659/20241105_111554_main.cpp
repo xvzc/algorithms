@@ -35,6 +35,22 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+  int n, m, a, b;
+  cin >> n >> m;
+  vector<int> nums(n + 1, 0);
+  for (int i = 1; i <= n; ++i) {
+    cin >> nums[i];
+    nums[i] = nums[i - 1] + nums[i];
+  }
+
+  // debug << nums << endl;
+
+  for (int i = 0; i < m; ++i) {
+    cin >> a >> b;
+    cout << nums[b] - nums[a - 1] << endl;
+  }
+
+
 
   return 0;
 }

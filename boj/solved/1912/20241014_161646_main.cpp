@@ -25,9 +25,9 @@ ostream& operator<<(ostream& os, const pair<X, Y>& p) {
 
 template <class C, class T, class Container>
 basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
-  auto it = cbegin(c);
+  auto it = c.begin();
   os << "{";
-  while (it != cend(c)) os << *it++ && it != cend(c) && os << ", ";
+  while (it != c.end()) os << *it++ && it != c.end() && os << ", ";
   return os << "}";
 }
 
@@ -35,6 +35,24 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+  int n;
+  cin >> n;
+  vector<int> nums(n);
+  for (int i = 0; i < n; ++i) {
+    cin >> nums[i];
+  }
+
+  ll maxi = nums[0];
+  ll sum = nums[0];
+  for (int i = 1; i < nums.size(); ++i) {
+    sum += nums[i];
+    if (sum < nums[i]) {
+      sum = nums[i];
+    }
+    maxi = max(maxi, sum);
+  }
+
+  cout << maxi << endl;
 
   return 0;
 }

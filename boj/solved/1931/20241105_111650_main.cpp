@@ -32,9 +32,44 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+bool compare(pair<int, int> p1, pair<int, int> p2) {
+  if (p1.se == p2.se) {
+    return p1.fi < p2.fi;
+  }
+
+  return p1.se < p2.se;
+}
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+
+  int n;
+  cin >> n;
+
+  vector<pair<int, int>> v(n);
+
+  for (int i = 0; i < n; ++i) {
+    cin >> v[i].fi >> v[i].se;
+  }
+
+  sort(all(v), compare);
+
+  debug << v << endl;
+
+  vector<pair<int,int>> schedule;
+  schedule.push_back(v[0]);
+
+  for (int i = 1; i < n; ++i) {
+    if (schedule.back().se > v[i].fi) {
+      continue;
+    }
+
+    schedule.push_back(v[i]);
+  }
+
+  debug << schedule << endl;
+
+  cout << schedule.size() << endl;
 
   return 0;
 }

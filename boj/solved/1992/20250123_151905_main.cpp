@@ -33,8 +33,50 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
+vector<string> image;
+
+string compress(int y, int x, int size) {
+  int black = 0;
+  int white = 0;
+  for (int i = y; i < y + size; ++i) {
+    for (int j = x; j < x + size; ++j) {
+      if (image[i][j] == '1') {
+        black++;
+      } else {
+        white++;
+      }
+    }
+  }
+
+  if (black == 0) {
+    return "0";
+  }
+
+  if (white == 0) {
+    return "1";
+  }
+
+  int next_size = size / 2;
+  string ul = compress(y, x, next_size);
+  string ur = compress(y, x + next_size, next_size);
+  string dl = compress(y + next_size, x, next_size);
+  string dr = compress(y + next_size, x + next_size, next_size);
+
+  return "(" + ul + ur + dl + dr + ")";
+}
+
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+
+  int n;
+  cin >> n;
+
+  image = vector<string>(n);
+  for (int i = 0; i < n; ++i) {
+    cin >> image[i];
+  }
+
+  cout << compress(0, 0, n) << endl;
 
   return 0;
 }

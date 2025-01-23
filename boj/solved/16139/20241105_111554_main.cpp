@@ -35,6 +35,26 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+  string s;
+  int q, from, to;
+  char c;
+  cin >> s >> q;
+
+  vector<vector<int>> pre_sums(26, vector<int>(s.length() + 1, 0));
+  for (int i = 0; i < pre_sums.size(); ++i) {
+    for (int j = 1; j < pre_sums[0].size(); ++j) {
+      char cur_char = i + 'a';
+      pre_sums[i][j] += pre_sums[i][j - 1];
+      if (cur_char == s[j - 1]) {
+        pre_sums[i][j]++;
+      }
+    }
+  }
+
+  while (q--) {
+    cin >> c >> from >> to;
+    cout << pre_sums[c - 'a'][to + 1] - pre_sums[c - 'a'][from] << endl;
+  }
 
   return 0;
 }

@@ -25,16 +25,34 @@ ostream& operator<<(ostream& os, const pair<X, Y>& p) {
 
 template <class C, class T, class Container>
 basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
-  auto it = cbegin(c);
+  auto it = c.begin();
   os << "{";
-  while (it != cend(c)) os << *it++ && it != cend(c) && os << ", ";
+  while (it != c.end()) os << *it++ && it != c.end() && os << ", ";
   return os << "}";
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+int dp[1000001] = {
+  0,
+};
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
 
+  int n;
+  cin >> n;
+  dp[1] = 1;
+  dp[2] = 2;
+  for (int i = 3; i <= 1000000; ++i) {
+    dp[i] = (dp[i - 1] % 15746 + dp[i - 2] % 15746) % 15746;
+  }
+
+  cout << dp[n] << endl;
+
   return 0;
 }
+
+// 1
+// 00 11
+// 100 001 111
+// 1001 0011 1111 0000 1100

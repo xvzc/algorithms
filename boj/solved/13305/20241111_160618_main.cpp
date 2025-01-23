@@ -36,5 +36,35 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
 
+  int n;
+  cin >> n;
+  vector<int> distances(n - 1);
+  vector<int> prices(n);
+
+  for (int i = 0; i < n - 1; ++i) {
+    cin >> distances[i];
+  }
+
+  for (int i = 0; i < n; ++i) {
+    cin >> prices[i];
+  }
+
+  ll cost = 0;
+  int cur_price = prices[0];
+  int d = distances[0];
+  for (int i = 1; i < n; ++i) {
+    if (prices[i] < cur_price) {
+      cost += (ll)d * cur_price;
+      cur_price = prices[i];
+      d = 0;
+    }
+
+    d += distances[i];
+  }
+
+  cost += (ll)d * cur_price;
+
+  cout << cost << endl;
+
   return 0;
 }

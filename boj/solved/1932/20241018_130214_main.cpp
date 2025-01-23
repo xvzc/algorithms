@@ -25,9 +25,9 @@ ostream& operator<<(ostream& os, const pair<X, Y>& p) {
 
 template <class C, class T, class Container>
 basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
-  auto it = cbegin(c);
+  auto it = c.begin();
   os << "{";
-  while (it != cend(c)) os << *it++ && it != cend(c) && os << ", ";
+  while (it != c.end()) os << *it++ && it != c.end() && os << ", ";
   return os << "}";
 }
 
@@ -35,6 +35,30 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+
+  int n;
+  cin >> n;
+
+  vector<vector<int>> tree;
+  for (int i = 0; i < n; ++i) {
+    tree.push_back(vector<int>(i + 1));
+    for (int j = 0; j <= i; ++j) {
+      cin >> tree[i][j];
+    }
+  }
+
+  for (int i = 1; i < tree.size(); ++i) {
+    tree[i][0] += tree[i - 1][0];
+    tree[i][i] += tree[i - 1][i - 1];
+  }
+
+  for (int i = 1; i < tree.size(); ++i) {
+    for (int j = 1; j < tree[i].size() - 1; ++j) {
+      tree[i][j] += max(tree[i - 1][j - 1], tree[i - 1][j]);
+    }
+  }
+
+  cout << *max_element(all(tree.back())) << endl;
 
   return 0;
 }

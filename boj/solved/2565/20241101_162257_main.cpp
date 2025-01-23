@@ -25,16 +25,42 @@ ostream& operator<<(ostream& os, const pair<X, Y>& p) {
 
 template <class C, class T, class Container>
 basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
-  auto it = cbegin(c);
+  auto it = c.begin();
   os << "{";
-  while (it != cend(c)) os << *it++ && it != cend(c) && os << ", ";
+  while (it != c.end()) os << *it++ && it != c.end() && os << ", ";
   return os << "}";
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
+bool compare(pair<int, int> p1, pair<int, int> p2) { return p1.fi < p2.fi; }
+
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+
+  int n;
+  cin >> n;
+
+  vector<pair<int, int>> lines(n, { 0, 0 });
+  vector<int> dp(n, 1);
+
+  for (int i = 0; i < n; ++i) {
+    cin >> lines[i].fi >> lines[i].se;
+  }
+
+  sort(all(lines), compare);
+
+  for (int i = 1; i < n; ++i) {
+    for (int j = i - 1; j >= 0; --j) {
+      if (lines[i].se <= lines[j].se) {
+        continue;
+      }
+
+      dp[i] = max(dp[i], dp[j] + 1);
+    }
+  }
+
+  cout << n - *max_element(all(dp)) << endl;
 
   return 0;
 }

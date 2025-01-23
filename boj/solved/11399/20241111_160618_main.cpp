@@ -36,5 +36,20 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
 
+  int n;
+  cin >> n;
+  vector<int> v(n);
+  for (int i = 0; i < n; ++i) {
+    cin >> v[i];
+  }
+
+  sort(all(v));
+  int ans = 0;
+  for (int i = 0; i < n; ++i) {
+    ans += v[i] * (n - i);
+  }
+
+  cout << ans << endl;
+
   return 0;
 }

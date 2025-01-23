@@ -32,9 +32,58 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+vector<vector<int>> cells;
+
+int total_white = 0;
+int total_blue = 0;
+void find(int y, int x, int len) {
+  int white = false;
+  int blue = false;
+  for (int i = y; i < y + len; ++i) {
+    for (int j = x; j < x + len; ++j) {
+      if (cells[i][j] == 0) {
+        white = true;
+      } else {
+        blue = true;
+      }
+
+      if (white && blue) {
+        /*debug << y << ' ' << x << ' ' << len << endl;*/
+        find(y, x, len / 2);
+        find(y, x + len / 2, len / 2);
+        find(y + len / 2, x, len / 2);
+        find(y + len / 2, x + len / 2, len / 2);
+
+        return;
+      }
+    }
+  }
+
+  if (white) {
+    total_white++;
+  }
+
+  if (blue) {
+    total_blue++;
+  }
+}
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+  int n;
+  cin >> n;
+
+  cells = vector<vector<int>>(n, vector<int>(n));
+  for (int i = 0; i < n; ++i) {
+    for (int j = 0; j < n; ++j) {
+      cin >> cells[i][j];
+    }
+  }
+
+  find(0, 0, n);
+  cout << total_white << endl;
+  cout << total_blue << endl;
 
   return 0;
 }
+

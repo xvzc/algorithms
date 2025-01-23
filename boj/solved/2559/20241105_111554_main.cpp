@@ -35,6 +35,24 @@ basic_ostream<C, T>& operator<<(basic_ostream<C, T>& os, Container const& c) {
 
 int main() {
   ios_base::sync_with_stdio(false), cin.tie(0);
+  int n, k;
+  cin >> n >> k;
+  vector<int> v(n + 1, 0);
+  for (int i = 1; i <= n; ++i) {
+    cin >> v[i];
+    v[i] += v[i - 1];
+  }
+
+  int max = -1e9;
+  for (int i = 0; i < v.size(); ++i) {
+    if (i < k) {
+      continue;
+    }
+
+    max = std::max(max, v[i] - v[i - k]);
+  }
+
+  cout << max;
 
   return 0;
 }
