@@ -13,7 +13,7 @@ filetype:
       - main.cpp
     root_templates:
       - compile_flags.txt
-    compile: g++ -std=c++17 -O2 -DLOCAL -Wall -Wno-sign-compare $file -o a.out
+    compile: g++ -std=c++20 -O2 -DLOCAL -Wall -Wno-sign-compare $file -o a.out
     run: "./a.out"
     after: rm -rf a.out
   py:

@@ -1,10 +1,10 @@
 {
-    "id": "1000",
-    "title": "A+B",
+    "id": "11401",
+    "title": "이항 계수 3",
     "filetype": "cpp",
     "language": 84,
     "source_path": "main.cpp",
     "testcase_dir": "testcases",
-    "checksum": "b279c1ca93027c297fffdb3aa84c6572",
+    "checksum": "198543b40feb05282eb5b4dcc688d328",
     "accepted": false
 }
