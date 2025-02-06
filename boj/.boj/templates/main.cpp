@@ -1,25 +1,25 @@
 #include <bits/stdc++.h>
 
-#ifdef LOCAL
-#define IF_LOCAL if constexpr (true)
+using namespace std;
+
+#ifdef ONLINE_JUDGE  // clang-format off
+__unused constexpr bool IS_LOCAL = false;
 #else
-#define IF_LOCAL if constexpr (false)
+__unused constexpr bool IS_LOCAL = true;
 #endif
 
-#define debug IF_LOCAL std::cout << "[DEBUG]" << ' '
-#define endl '\n'
+#define debug if constexpr (IS_LOCAL) cout << "[DEBUG]" << ' '
 #define fi first
 #define se second
 #define all(x) (x).begin(), (x).end()
 #define bitcnt(x) __builtin_popcount(x)
+#define endl '\n'  // clang-format on
 
 __unused const auto MOD = 1000000007;
 __unused const auto PI = 3.1415926535897932384626433832795;
 
 typedef long long ll;
 typedef unsigned long long ull;
-
-using namespace std;
 
 template <typename X, typename Y>
 ostream& operator<<(ostream& os, const pair<X, Y>& p) {
