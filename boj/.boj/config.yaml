@@ -1,7 +1,10 @@
 general:
-  selenium_browser: chrome
+  selenium_browser: firefox
   default_filetype: cpp
   editor_command: nvim -o
+  submit_command:
+    linux: firefox $url
+    darwin: open $url
 workspace:
   ongoing_dir: problems
   archive_dir: solved
@@ -13,6 +16,7 @@ filetype:
       - main.cpp
     root_templates:
       - compile_flags.txt
+      - .clangd
     compile: g++ -std=c++20 -O2 -Wall -Wno-sign-compare $file -o a.out
     run: "./a.out"
     after: rm -rf a.out

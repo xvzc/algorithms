@@ -7,3 +7,4 @@ a.out
 test/*
 .ccls
 boj-token
+.direnv

@@ -79,7 +79,6 @@ int main() {
   }
 
   cout << find(0, 0, n) << endl;
-  target = 1;
   cout << find(0, 0, n);
 
   // for (auto v : cells) {
